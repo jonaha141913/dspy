@@ -205,7 +205,7 @@ class DspyAdapter(GEPAAdapter[Example, TraceData, Prediction]):
                     for dd in adapter.format(module.signature, [], {}):
                         structure_instruction += dd["role"] + ": " + dd["content"] + "\n"
                     d["Feedback"] = "Your output failed to parse. Follow this structure:\n" + structure_instruction
-                    # d['score'] = self.failure_score
+                    # d["score"] = self.failure_score
                 else:
                     feedback_fn = self.feedback_map[pred_name]
                     fb = feedback_fn(
