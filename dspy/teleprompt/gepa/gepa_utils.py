@@ -198,13 +198,13 @@ class DspyAdapter(GEPAAdapter[Example, TraceData, Prediction]):
                     for output_key, output_val in outputs.items():
                         new_outputs[output_key] = str(output_val)
 
-                d = {"Inputs": new_inputs, "Generated Outputs": new_outputs}
+                d = {'Inputs': new_inputs, 'Generated Outputs': new_outputs}
                 if isinstance(outputs, FailedPrediction):
                     adapter = ChatAdapter()
                     structure_instruction = ""
                     for dd in adapter.format(module.signature, [], {}):
                         structure_instruction += dd["role"] + ": " + dd["content"] + "\n"
-                    d["Feedback"] = "Your output failed to parse. Follow this structure:\n" + structure_instruction
+                    d['Feedback'] = "Your output failed to parse. Follow this structure:\n" + structure_instruction
                     # d['score'] = self.failure_score
                 else:
                     feedback_fn = self.feedback_map[pred_name]
