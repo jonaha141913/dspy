@@ -3,10 +3,10 @@ from datetime import datetime
 from typing import TYPE_CHECKING, Any, TypedDict
 from urllib.parse import urljoin
 
+import dspy
 import openai
 import requests
 
-import dspy
 from dspy.clients.provider import Provider, ReinforceJob, TrainingJob
 from dspy.clients.utils_finetune import GRPOGroup, TrainDataFormat, TrainingStatus, save_data, MultiGPUConfig
 
